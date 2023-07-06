@@ -5,7 +5,7 @@ import Login from "../page/Login";
 import NotFound from "../page/NotFound";
 
 
-const router = createBrowserRouter([
+const routes = createBrowserRouter([
     {
       path: "/",
       element: <App/>
@@ -24,4 +24,4 @@ const router = createBrowserRouter([
     }
   ]);
 
-  export default router
+  export default routes
