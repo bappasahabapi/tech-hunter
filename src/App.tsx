@@ -1,12 +1,13 @@
-import Counter from "./components/Counter"
+import { Toaster } from './components/ui/Toaster';
+import MainLayout from './layouts/MainLayout';
 
 function App() {
   return (
-    <>
-      <h1 className="mt-5 text-2xl text-center font-bold">Hello tech hunter bapi-- App.tsx is default routes</h1>
-      <Counter/>
-    </>
-  )
+    <div>
+      <Toaster />
+      <MainLayout />
+    </div>
+  );
 }
 
-export default App
+export default App;
