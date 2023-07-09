@@ -32,9 +32,25 @@ const cartSlice =createSlice({
                
             }
         },
+        removeOne:(state, action:PayloadAction<IProduct>)=>{
+            const existing =state.products.find((product)=>product._id ===action.payload._id);
+            if(existing && existing.quantity!>1){
+                existing.quantity=existing.quantity! -1
+
+            }else{
+                state.products=state.products.filter(p=>p._id !==action.payload._id)
+               
+            }
+        },
+
+        //delete cart
+        removeCart:(state,action:PayloadAction<IProduct>)=>{
+            state.products=state.products.filter(p=>p._id !==action.payload._id)
+        }
     }
+
 
 });
 
-export const {addToCart}= cartSlice.actions
+export const {addToCart,removeCart,removeOne}= cartSlice.actions
 export default cartSlice.reducer

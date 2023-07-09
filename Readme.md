@@ -51,4 +51,20 @@ Resource Link:[https://ui.shadcn.com/docs/components/]
 ```
 `4. add and remove cart features`
 
+- cart.tsx file e jabo 
+- 
+- plus button er onclick e dispatch er vitore function call kore er vitore product take rap kore dibo
 
+- remove korte chaile filter use kore same vabe button e korbo.
+
+```ts
+        removeCart:(state,action:PayloadAction<IProduct>)=>{
+            state.products=state.products.filter(p=>p._id !==action.payload._id)
+        }
+```
+
+```ts
+                <Button onClick={()=>dispatch(removeCart(product))}>
+                  <HiMinus size="20" />
+                </Button>
+```
