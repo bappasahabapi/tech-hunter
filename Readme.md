@@ -73,3 +73,7 @@ Resource Link:[https://ui.shadcn.com/docs/components/]
 
 
 `5. Total Count and Checkout`
+
+`6. Product filters with vanila redux`
+
+- make a **productSlice**.ts inside features/products
