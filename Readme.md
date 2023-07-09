@@ -49,6 +49,8 @@ Resource Link:[https://ui.shadcn.com/docs/components/]
             }
         },
 ```
+
+
 `4. add and remove cart features`
 
 - cart.tsx file e jabo 
@@ -68,3 +70,6 @@ Resource Link:[https://ui.shadcn.com/docs/components/]
                   <HiMinus size="20" />
                 </Button>
 ```
+
+
+`5. Total Count and Checkout`
