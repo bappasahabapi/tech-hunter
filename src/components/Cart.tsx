@@ -13,14 +13,20 @@ import {
 } from 'react-icons/hi';
 import { Button } from './ui/button';
 import { IProduct } from '@/types/globalTypes';
+import { useAppSelector } from '@/redux/hook';
 
 export default function Cart() {
   //! Dummy data
 
-  const products: IProduct[] = [];
-  const total = 0;
+  // const products: IProduct[] = [];
+  // const total = 0;
 
   //! **
+
+// todo: showing the product to the ui
+  const {products}=useAppSelector(state=>state.cart);
+  console.log(products)
+  const total = 0;
 
   return (
     <Sheet>
