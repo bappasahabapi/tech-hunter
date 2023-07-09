@@ -4,11 +4,14 @@ import {createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from '@reduxjs/toolkit'
 
 interface ICart{
-    products:IProduct[]
+    products:IProduct[];
+    total:number
+
 }
 
 const initialState:ICart={
-    products:[]
+    products:[],
+    total:0
 };
 
 
@@ -31,6 +34,9 @@ const cartSlice =createSlice({
                 state.products.push({...action.payload ,quantity:1})
                
             }
+
+            //now handle the total part
+           state.total +=action.payload.price;
         },
         removeOne:(state, action:PayloadAction<IProduct>)=>{
             const existing =state.products.find((product)=>product._id ===action.payload._id);
@@ -41,12 +47,19 @@ const cartSlice =createSlice({
                 state.products=state.products.filter(p=>p._id !==action.payload._id)
                
             }
+                        //now handle the total part
+           state.total -=action.payload.price
         },
 
         //delete cart
         removeCart:(state,action:PayloadAction<IProduct>)=>{
-            state.products=state.products.filter(p=>p._id !==action.payload._id)
+            state.products=state.products.filter(p=>p._id !==action.payload._id);
+
+                  //now handle the total part
+            state.total -=action.payload.price * action.payload.quantity!;
         }
+       
+        
     }
 
 

@@ -25,10 +25,10 @@ export default function Cart() {
   //! **
 
 // todo: showing the product to the ui
-  const {products}=useAppSelector(state=>state.cart);
+  const {products,total}=useAppSelector(state=>state.cart);
   const dispatch =useAppDispatch();
   // console.log(products)
-  const total = 0;
+  // const total = 0;
 
   return (
     <Sheet>
