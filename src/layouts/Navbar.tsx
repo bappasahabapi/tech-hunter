@@ -11,6 +11,7 @@ import {
 } from '../components/ui/dropdown-menu';
 import { HiOutlineSearch } from 'react-icons/hi';
 import Cart from '../components/Cart';
+// import logo1 from '../assets/images/logo.png
 import logo from '../assets/images/technet-logo.png';
 
 export default function Navbar() {
