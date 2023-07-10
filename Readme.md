@@ -22,7 +22,7 @@ Resource Link:[https://ui.shadcn.com/docs/components/]
 
 - Dispatch korlei product store e jabe means **devtool** e pabo state ta.
 
-- jekane use korte chabo sekane useSelector diye anbo
+- jekane use korte chabo sekane useSelector diye store the data ante dekhabo UI te
 
 `3. Handling business logic inside an action reducer`
 
