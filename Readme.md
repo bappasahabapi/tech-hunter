@@ -77,3 +77,45 @@ Resource Link:[https://ui.shadcn.com/docs/components/]
 `6. Product filters with vanila redux`
 
 - make a **productSlice**.ts inside features/products
+- 
+- `8.  create api slice and add to the store`
+
+**apiSlice.ts**
+
+```powershell
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+
+export const api = createApi({
+  reducerPath: 'apidada',
+  baseQuery: fetchBaseQuery({ baseUrl:'http://localhost:5000' }),
+  endpoints: (builder) => ({
+    getProducts: builder.query({
+      query: () => '/product',
+    }),
+  }),
+});
+
+export const { useGetProductsQuery } = api;
+```
+**store.ts**
+
+```typescript
+import { api } from './api/apiSlice';
+
+const store = configureStore({
+    reducer: {
+        cart:cartReducer,
+        product:producReducer,
+        [api.reducerPath]:api.reducer
+    },
+    middleware:(getDefaultMiddleware)=>getDefaultMiddleware().concat(api.middleware)
+});
+
+// fix the type error 
+export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch
+
+export default store;
+```
+
+ `9.  create api slice and add to the store`
