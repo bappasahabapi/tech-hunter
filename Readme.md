@@ -119,3 +119,14 @@ export default store;
 ```
 
  `9.  create api slice and add to the store`
+
+
+ `10.  create api slice and add to the store`
+
+ `11.  create api slice post comment mutation`
+
+ - make the usePostCommentMutation hook
+
+ `12.  handle  post comment using mutation hook`
+ 
+- go to the productReview component for using the hoook.
