@@ -1,0 +1,15 @@
+### Create Department
+ POST http://localhost:5001/api/v1/academic-departments/create-department 
+ Content-Type: application/json {
+
+"title":"Faculty of computer science", "academicFaculty":"6493d12cf3d62e23b1329f1f"
+}
+
+### Get all products
+GET http://localhost:5000/products
+Content-Type: application/json
+
+
+### Get single product
+GET http://localhost:5000/product/64ac34922b2527f5c323281f
+Content-Type: application/json
