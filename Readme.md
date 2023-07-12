@@ -165,3 +165,16 @@ export default store;
 - And ami kokon chacci j data ta refetch trigger hok seta holo **postComment** endpoint e
   sei thetre ami comments tag er jei data ta ase seta invalided kore dibo. that means postComment
   e **invalidetesTags**['comments'] hobe. 
+
+
+
+`14: Refetching-using-Mount-or-Arg-change,-polling-and-code-splitting`
+
+- onno kuno user jodi data post kore seita sathe sathe add hocce na . ei case ta at a time 
+    handle korar jonnno amra 
+` const { data:commentsData}=useGetCommentQuery(id,{refetchOnMountOrArgChange:true});`
+component ta jokon remount hbe tokon add hoye jabe comment.
+**or,**
+amra chaile ekta time interval por por update kore dite pari ei case handle korara jonno **pollingInterval** use kore
+
+`  const { data:commentsData}=useGetCommentQuery(id,{refetchOnMountOrArgChange:true,pollingInterval:9000});`

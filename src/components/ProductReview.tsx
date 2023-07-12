@@ -3,7 +3,8 @@ import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { Button } from './ui/button';
 import { Textarea } from './ui/textarea';
 import { FiSend } from 'react-icons/fi';
-import { useGetCommentQuery, usePostCommentMutation } from '@/redux/api/apiSlice';
+import { useGetCommentQuery, usePostCommentMutation } from '@/redux/features/products/productApi';
+
 
 // const dummyComments = [
 //   'Bhalo na',
@@ -19,7 +20,13 @@ interface IProps {
 export default function ProductReview({ id }: IProps) {
   const [inputValue, setInputValue] = useState<string>('');
 
-  const { data:commentsData}=useGetCommentQuery(id)
+  // const { data:commentsData}=useGetCommentQuery(id);
+  // const { data:commentsData}=useGetCommentQuery(id,{refetchOnMountOrArgChange:true});
+  // const { data:commentsData}=useGetCommentQuery(id,{refetchOnMountOrArgChange:true,pollingInterval:1000});
+  const { data:commentsData}=useGetCommentQuery(id,{
+    refetchOnMountOrArgChange:true,
+    pollingInterval:60000
+  });
 
   const [postComment,{isLoading}]=usePostCommentMutation();
 
