@@ -150,3 +150,18 @@ export default store;
       // comment:inputValue --> this gives undefined 
     }
 ```
+
+`13. Catch Revalidation`
+- make a hook named  **useGetCommentQuery**
+- 1st the data is post and the fetch [thats why its called two times]
+- so we need to invalidated the comment tag for refetch the data
+- ami jodoki ekta post commnent request korbo sathe sathei post hobar por
+  redux data tak fetch kore niye asebe . **ek kajtai hoi tagTypes use kore.**
+- ami chacci comment provide korte tai ami sekhane **provideTags['comments']**
+ ebong 
+
+- jei endpoint theke data ta astece setai hocce amr **provider**. ekhane **getComment** endpoint
+  theke data ta astece.
+- And ami kokon chacci j data ta refetch trigger hok seta holo **postComment** endpoint e
+  sei thetre ami comments tag er jei data ta ase seta invalided kore dibo. that means postComment
+  e **invalidetesTags**['comments'] hobe. 
