@@ -137,3 +137,16 @@ export default store;
 
 ```
 `12.  Handling-post-method-using-mutation-hook`
+
+-    we use this hook in the product review component.
+-    This mutation  hook returns [fucntion,{}] -- here we dot use dispatch.
+-  amra data kivabe pathaci seta besi important .mane backend kivabe data ta accept kortece rest file 
+    e hit kore bujte hbe.
+
+```javascript
+ const options={
+      id:id,
+      comment:{comment:inputValue}
+      // comment:inputValue --> this gives undefined 
+    }
+```
