@@ -178,3 +178,11 @@ component ta jokon remount hbe tokon add hoye jabe comment.
 amra chaile ekta time interval por por update kore dite pari ei case handle korara jonno **pollingInterval** use kore
 
 `  const { data:commentsData}=useGetCommentQuery(id,{refetchOnMountOrArgChange:true,pollingInterval:9000});`
+
+- make a root api where all endpoint of others api is injected.
+- 
+`15.  Creating-a-user-slice`
+- here we handle the create async part. this is related to handle authentication . To do this 
+
+1. first make a slice in **userSlice.ts** file
+2. store the user slice in store.ts 
