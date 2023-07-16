@@ -186,3 +186,7 @@ amra chaile ekta time interval por por update kore dite pari ei case handle kora
 
 1. first make a slice in **userSlice.ts** file
 2. store the user slice in store.ts 
+
+
+
+`16.  Create Async thunk jinisgulo amra extraReducer e handle korbo` 

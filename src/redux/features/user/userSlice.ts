@@ -1,5 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { auth } from '@/lib/firebase';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 interface IUserState {
     user: {
@@ -21,10 +23,51 @@ const initialState: IUserState = {
 
 };
 
+interface ICredential{
+    email:string;
+    password:string;
+}
+
+
+//* create old redux thunk
+ export const createUser=createAsyncThunk(
+    'user/createUser',
+    async({email,password}:ICredential)=>{
+        const data =await createUserWithEmailAndPassword(auth,email,password);
+
+        return data.user.email; // otherwise we cant get the data in redux store
+    }
+);
+
+
+//* 
+
 const userSlice = createSlice({
-    name: 'product',
+    name: 'user',
     initialState,
     reducers: {},
+
+    extraReducers:(builder)=>{
+        builder
+        .addCase(createUser.pending,(state)=>{
+            state.isLoading=true;
+            state.isError=false;
+            state.error=null;
+        })
+        .addCase(createUser.fulfilled,(state,action)=>{
+            state.isLoading=false;
+            state.user.email=action.payload;
+        })
+        .addCase(createUser.rejected,(state,action)=>{
+            state.user.email=null;
+            state.isLoading=false;
+            state.isError=true;
+            state.error=action.error.message! // this is not null assertion
+            
+        })
+      
+            
+        }
 });
 
 // export const { toggleState, setPriceRange } = userSlice.actions;
