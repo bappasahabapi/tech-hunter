@@ -58,7 +58,15 @@ interface ICredential{
 const userSlice = createSlice({
     name: 'user',
     initialState,
-    reducers: {},
+    reducers: {
+        //make normal user
+        setUser:(state,action:PayloadAction<string|null>)=>{
+            state.user.email=action.payload;
+        },
+        setLoading:(state,action:PayloadAction<boolean>)=>{
+            state.isLoading=action.payload;
+        }
+    },
 
     extraReducers:(builder)=>{
         builder
@@ -100,6 +108,6 @@ const userSlice = createSlice({
         }
 });
 
-// export const { toggleState, setPriceRange } = userSlice.actions;
+export const { setUser,setLoading} = userSlice.actions;
 
 export default userSlice.reducer;

@@ -194,3 +194,5 @@ amra chaile ekta time interval por por update kore dite pari ei case handle kora
 `17.  Handling-promise-stages-with-builder-and-addCase` 
 
 `18.  22-8: Handling-user-persistency  ` 
+
+`18.  22-8: Handling logout  ` 
