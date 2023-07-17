@@ -190,3 +190,7 @@ amra chaile ekta time interval por por update kore dite pari ei case handle kora
 
 
 `16.  Create Async thunk jinisgulo amra extraReducer e handle korbo` 
+
+`17.  Handling-promise-stages-with-builder-and-addCase` 
+
+`18.  22-8: Handling-user-persistency  ` 
