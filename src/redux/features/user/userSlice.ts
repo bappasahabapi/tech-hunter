@@ -60,7 +60,7 @@ const userSlice = createSlice({
     initialState,
     reducers: {
         //make normal user
-        setUser:(state,action:PayloadAction<string|null>)=>{
+        setUser:(state,action:PayloadAction<string |null>)=>{
             state.user.email=action.payload;
         },
         setLoading:(state,action:PayloadAction<boolean>)=>{

@@ -12,16 +12,27 @@ import {
 import { HiOutlineSearch } from 'react-icons/hi';
 import Cart from '../components/Cart';
 import logo from '../assets/images/technet-logo.png';
-import { useAppSelector } from '@/redux/hook';
+import { useAppDispatch, useAppSelector } from '@/redux/hook';
+import { getAuth, signOut } from "firebase/auth";
+import { setUser } from '@/redux/features/user/userSlice';
+
 
 export default function Navbar() {
 
+  const { user } = useAppSelector(state => state.user);
 
+  const dispatch=useAppDispatch()
 
-  const { user } = useAppSelector(state => state.user)
+  const handleLogout = () => {
+    console.log('Logout');
+    const auth = getAuth();
+    signOut(auth).then(() => {
+      // Sign-out successful.
+      dispatch(setUser(null))
 
-  const handleLogout=()=>{
-    console.log('Logout')
+    }).catch((error) => {
+      // An error happened.
+    });
   }
 
 
@@ -72,24 +83,24 @@ export default function Navbar() {
                       Profile
                     </DropdownMenuItem>
                     {!user.email && (
-                    <>
-                      <Link to='/login'>
-                        <DropdownMenuItem className="cursor-pointer">
-                          Login
-                        </DropdownMenuItem>
-                      </Link>
-                      <Link to='/signup'>
-                        <DropdownMenuItem className="cursor-pointer">
-                          Sign Up
-                        </DropdownMenuItem>
-                      </Link>
-                    </>
+                      <>
+                        <Link to='/login'>
+                          <DropdownMenuItem className="cursor-pointer">
+                            Login
+                          </DropdownMenuItem>
+                        </Link>
+                        <Link to='/signup'>
+                          <DropdownMenuItem className="cursor-pointer">
+                            Sign Up
+                          </DropdownMenuItem>
+                        </Link>
+                      </>
                     )}
                     {
-                      user.email &&(
+                      user.email && (
                         <DropdownMenuItem onClick={handleLogout} className="cursor-pointer">
-                        Logout
-                      </DropdownMenuItem>
+                          Logout
+                        </DropdownMenuItem>
                       )
                     }
                   </DropdownMenuContent>
