@@ -1,7 +1,10 @@
-This is start up branch only front end design part is done. [copyright]
+###    Cypress 
+
+First run the server 
+
+- `npm cypress open`
 
 Resource Link:[https://ui.shadcn.com/docs/components/]
-
 
 ###   Steps:
 
