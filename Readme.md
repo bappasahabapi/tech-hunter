@@ -1,6 +1,14 @@
 ###    Cypress 
 
-First run the server 
+### Server Link:
+
+🫧 Clone the server code 
+- [Tech Hunter Server ](https://github.com/bappasahabapi/tech-hunter-server/tree/main)
+
+
+run the server 
+
+- `yarn start`
 
 - `npm cypress open`
 
