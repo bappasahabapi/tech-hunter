@@ -1,7 +1,18 @@
-This is start up branch only front end design part is done.
+###    Cypress 
+
+### Server Link:
+
+🫧 Clone the server code 
+- [Tech Hunter Server ](https://github.com/bappasahabapi/tech-hunter-server/tree/main)
+
+
+run the server 
+
+- `yarn start`
+
+- `npm cypress open`
 
 Resource Link:[https://ui.shadcn.com/docs/components/]
-
 
 ###   Steps:
 

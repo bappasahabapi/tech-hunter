@@ -46,12 +46,12 @@ export default function Navbar() {
           <div>
             <ul className="flex items-center">
               <li>
-                <Button variant="link" asChild>
+                <Button  variant="link" asChild>
                   <Link to="/">Home</Link>
                 </Button>
               </li>
               <li>
-                <Button variant="link" asChild>
+                <Button data-testid="products" variant="link" asChild>
                   <Link to="/products">Products</Link>
                 </Button>
               </li>
